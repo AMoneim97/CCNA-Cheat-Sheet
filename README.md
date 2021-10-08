@@ -584,3 +584,17 @@ Use the command router ospf process ID to start OSPF: (config)# router ospf 1
 Use the network command to enable the interfaces: (config-router)# network 10.2.2.0 0.0.0.3 area 0
 Use the passive-interface command to stop OSPF from sending hello packets towards interface  g0/0/1: (config-router)# passive-interface g0/0/1
 ```
+## Configure Administrative Roles
+**Note:** To delete a view, use the command no parser view viewname.
+```
+Enable AAA on the router: (config)# aaa new-model
+A privileged EXEC mode password is required to access the root view: (config)# enable secret cisco12345
+Use the command enable view to enable the root view: # enable view 
+                                                       Password: cisco12345
+Create the admin1 view while in the root view: (config)# parser view admin1
+Associate the admin1 view with an encrypted password: (config-view)# secret admin1pass
+Add commands to the admin1 view: (config-view)# commands exec include all config terminal
+                                 (config-view)# commands exec include show interfaces
+Verify the admin1 view: R1# enable view tech
+                            Password: admin1pass
+```
