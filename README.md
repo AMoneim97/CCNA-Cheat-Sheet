@@ -577,3 +577,10 @@ Remove in favor of chap: (config-if)# no ppp authentication pap
 Remove in favor of chap: (config-if)# no ppp pap sent-username fnord password pass
 
 Require remote to authenticate via chap: (config-if)# ppp authentication chap
+```
+## OSPF
+```
+Use the command router ospf process ID to start OSPF: (config)# router ospf 1
+Use the network command to enable the interfaces: (config-router)# network 10.2.2.0 0.0.0.3 area 0
+Use the passive-interface command to stop OSPF from sending hello packets towards interface  g0/0/1: (config-router)# passive-interface g0/0/1
+```
