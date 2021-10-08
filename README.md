@@ -456,7 +456,7 @@ Create local user with encrypted password: (config)# username h.acker secret C1s
 ```
 ## SSH
 ```
-Required to generate SSH keys: (config)# hostname Fooba
+Required to generate SSH keys: (config)# hostname Router-name
 
 Required to generate SSH keys: (config)# ip domain-name example.com
 
